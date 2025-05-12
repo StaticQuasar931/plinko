@@ -2,56 +2,57 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:title" content="Plinko" />
-    <meta property="og:description" content="A web-based Plinko game inspired by Stake.com, built using Svelte and Tailwind CSS" />
-    <meta property="og:url" content="https://yourdomain.com/" />
-    <meta property="og:image" content="/_app/immutable/assets/og_image.PzHn9Bxz.jpg" />
+    <meta name="description" content="A web-based Plinko game inspired by Stake.com, built with SvelteKit and Tailwind CSS." />
 
-    <!-- Google Fonts -->
+    <title>Plinko</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/plinko-game/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/plinko-game/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/plinko-game/favicon-16x16.png" />
+    <link rel="manifest" href="/plinko-game/site.webmanifest" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Plinko" />
+    <meta property="og:description" content="A web-based Plinko game inspired by Stake.com." />
+    <meta property="og:url" content="https://staticquasar931.github.io/plinko-game/" />
+    <meta property="og:image" content="https://staticquasar931.github.io/plinko-game/_app/immutable/assets/og_image.PzHn9Bxz.jpg" />
+    <meta property="og:type" content="website" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
 
-    <!-- SvelteKit Styles -->
-    <link href="/_app/immutable/assets/0.DYv0tzvm.css" rel="stylesheet" />
-    <link href="/_app/immutable/assets/3.CZGf8PqV.css" rel="stylesheet" />
+    <!-- Stylesheets (adjust hashes to your actual file names) -->
+    <link href="/plinko-game/_app/immutable/assets/0.DYv0tzvm.css" rel="stylesheet" />
+    <link href="/plinko-game/_app/immutable/assets/3.CZGf8PqV.css" rel="stylesheet" />
 
-    <!-- Module Preloads -->
-    <link rel="modulepreload" href="/_app/immutable/entry/start.DomPsrer.js" />
-    <link rel="modulepreload" href="/_app/immutable/entry/app.DrIWpBxT.js" />
-    <link rel="modulepreload" href="/_app/immutable/chunks/runtime.B6-RLXeG.js" />
-    <link rel="modulepreload" href="/_app/immutable/chunks/index.1R4NNCR9.js" />
-    <link rel="modulepreload" href="/_app/immutable/chunks/index-client.IFODohJ2.js" />
-    <link rel="modulepreload" href="/_app/immutable/chunks/utils.CE8SNpUt.js" />
-
-    <title>Plinko</title>
+    <!-- Module Preload (adjust hashes to your actual file names) -->
+    <link rel="modulepreload" href="/plinko-game/_app/immutable/entry/start.DomPsrer.js" />
+    <link rel="modulepreload" href="/plinko-game/_app/immutable/entry/app.DrIWpBxT.js" />
+    <link rel="modulepreload" href="/plinko-game/_app/immutable/chunks/runtime.B6-RLXeG.js" />
+    <link rel="modulepreload" href="/plinko-game/_app/immutable/chunks/index.1R4NNCR9.js" />
+    <link rel="modulepreload" href="/plinko-game/_app/immutable/chunks/index-client.IFODohJ2.js" />
+    <link rel="modulepreload" href="/plinko-game/_app/immutable/chunks/utils.CE8SNpUt.js" />
   </head>
+
   <body data-sveltekit-preload-data="hover">
     <div id="svelte">Loading...</div>
 
     <script>
-      const appElement = document.getElementById('svelte');
-
       window.__sveltekit_1fgf2k3 = {
-        base: new URL(".", location).pathname.slice(0, -1)
+        base: '/plinko-game'
       };
 
+      const target = document.getElementById('svelte');
+
       Promise.all([
-        import("/_app/immutable/entry/start.DomPsrer.js"),
-        import("/_app/immutable/entry/app.DrIWpBxT.js")
+        import('/plinko-game/_app/immutable/entry/start.DomPsrer.js'),
+        import('/plinko-game/_app/immutable/entry/app.DrIWpBxT.js')
       ]).then(([kit, app]) => {
-        kit.start(app, appElement, {
-          node_ids: [0],
-          data: [null],
-          form: null,
-          error: null
-        });
+        kit.start(app, target);
       });
     </script>
   </body>
